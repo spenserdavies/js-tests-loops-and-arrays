@@ -4,6 +4,9 @@
 // output: ['is', 'a', 'split', 'sentence.', 'This']
 
 function rearranger(arr) {
+    let pulledIndex = arr.shift();
+    arr.push(pulledIndex);
+    return arr;
 }
 
 
@@ -16,6 +19,19 @@ function rearranger(arr) {
 // output: 42
 
 function largestNum(arr) {
+    let num1 = 0;
+    let num2 = 0;
+    let biggest = 0;
+    
+    for (i=0; i<arr.length; i++){
+        num1 = arr[i]
+        if (num1 >= num2){
+            biggest = num1;
+            num2 = num1;
+        }
+
+    }
+    return biggest;
 }
 
 
@@ -28,6 +44,12 @@ function largestNum(arr) {
 // output: [16, 8, 4, 28]
 
 function elemsTimesLength(arr) {
+    let outPut = [];
+    for (i = 0; i<arr.length; i++){
+        let newNum = arr[i] * arr.length;
+        outPut.push(newNum);
+    }
+    return outPut;
 }
 
 
@@ -41,7 +63,12 @@ function elemsTimesLength(arr) {
 // Primitive data types - https://developer.mozilla.org/en-US/docs/Glossary/Primitive
 
 function arrayFlattener(arr) {
-
+    let flatArray = [];
+    for(let i = 0; i<arr.length; i++){
+    let newArr = arr[i].replace(/[)}[{(]/g, ''); //will take out the (){}[] 
+    flatArray.push(newArr);
+    }
+    return flatArray;
 }
 
 
@@ -76,6 +103,11 @@ let flights = [{
 
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
+    let indDest = flights.find(dest => flights.destination)
+    let indCost = flights.find(cost => flights.prices.standard)
+
+    return "A Trip To " + indDest + " will cost $" + cost
+
 
 }
 

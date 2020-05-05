@@ -63,12 +63,9 @@ function elemsTimesLength(arr) {
 // Primitive data types - https://developer.mozilla.org/en-US/docs/Glossary/Primitive
 
 function arrayFlattener(arr) {
-    let flatArray = [];
-    for(let i = 0; i<arr.length; i++){
+
     let newArr = arr[i].replace(/[)}[{(]/g, ''); //will take out the (){}[] 
-    flatArray.push(newArr);
-    }
-    return flatArray;
+
 }
 
 
@@ -103,11 +100,13 @@ let flights = [{
 
 function flightCost(destination, firstClass) {
     //***hint: use the find method***
-    let indDest = flights.find(dest => flights.destination)
-    let indCost = flights.find(cost => flights.prices.standard)
+    let indDest = flights.find(flight => flight.destination)
+    let indCost = flights.find(flight => flight.prices.standard)
+    let fstCost = flights.find(flight => flight.prices.firstClass )
 
-    return "A Trip To " + indDest + " will cost $" + cost
-
+    for (let i = 0; i < flights.length; i++){
+        
+    }
 
 }
 
